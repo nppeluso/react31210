@@ -1,12 +1,12 @@
 import React from "react";
-import icon from "../assets/guarderia.jpg"
-import "./../Styles/NavBar.css"
+import CartWidget from "../CartWidget/CartWidget";
+import icon from "../../assets/guarderia.jpg"
+import "./NavBar.css"
 
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const NavBar = () => {
     return (
-        <>
+        <div className="navBar">
             <img src={icon} alt=""></img>
             <h1>Guardería BetyVero</h1>
             <nav>
@@ -15,9 +15,8 @@ const NavBar = () => {
                 <a href="#"> Imágenes del predio </a>
                 <a href="#"> Adiestramiento </a>
             </nav>
-            <ShoppingCartOutlinedIcon color="success" fontSize="large" />
-
-        </>
+            <CartWidget />
+        </div>
     )
 }
 

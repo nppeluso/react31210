@@ -1,8 +1,13 @@
 import React from 'react';
-import Header from './Components/Header/Header'
+import NavBar from './Components/NavBar/NavBar'
+import ItemListContainer from './Components/ItemListContainer/ItemLisContainer';
+
 const App = () => {
   return (
-    <Header />
+    <>
+      <NavBar />
+      <ItemListContainer greeting='CATALOGO'/>
+    </>
   )
 }
 
