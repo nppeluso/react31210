@@ -10,5 +10,14 @@ Tienda virtual donde se podrá encontrar productos y/o servicios relacionados a 
 - Componente contenedor ItemListContainer que contiene leyenda que luego será reemplazado con el catálogo
 - Utilización de Props 
 - Estilos con CSS3 y Material
+- Opción de aumentar y disminuir la cantidad de productos a pedir, limitado por la cantidad de stock que haya
 
+## Metodología aplicada
+
+- Componentes React 
+- Props 
+- UseState
+- JS
+- CSS
+- Material
 
