@@ -11,10 +11,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
   return (
     <div className="contador">
         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-            <Button variant="contained" endIcon={<AddIcon />} onClick={()=>count(1*initial)}>Agregar</Button>
-            <TextField id="outlined-basic" label={carrito} variant="outlined"></TextField>
-            <Button variant="contained" endIcon={<RemoveIcon />} onClick={()=>count(-1*initial)}>Remover</Button>
-            <Button variant="outlined" onClick={()=>onAdd(carrito)}>Confirmar</Button>
+          <Button variant="contained" endIcon={<RemoveIcon />} onClick={()=>count(-1*initial)}>Remover</Button>
+          <TextField id="outlined-basic" label={carrito} variant="outlined"></TextField>
+          <Button variant="contained" endIcon={<AddIcon />} onClick={()=>count(1*initial)}>Agregar</Button>
+          <Button variant="outlined" onClick={()=>onAdd(carrito)}>Confirmar</Button>
         </ButtonGroup>
     </div>
   )
