@@ -13,7 +13,7 @@ const ItemListContainer = () => {
         getInfo.then((response) => setProductList(response))
         .catch((error)=> console.log(error))
         .finally(()=> setLoading(false))
-    })
+    },[])
 
     /* Desafío Componentes II - Contador con Botón */ 
     const stock = 30;
@@ -25,10 +25,12 @@ const ItemListContainer = () => {
         }
     }
     return(
+        <div>
         <div className="landing">
             {loading ? <p>Cargando...</p> : <ItemList productList={productList}/>}
-            <ItemCount stock={stock} initial='1' onAdd={onAdd}/>
         </div>
+            <ItemCount stock={stock} initial='1' onAdd={onAdd}/>
+            </div> 
     )
 }
 
