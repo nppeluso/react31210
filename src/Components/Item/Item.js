@@ -5,7 +5,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import "./Item.css"
 
 const Item = ({product}) => {
     const {img, name, description, stock}=product;
@@ -26,7 +25,7 @@ const Item = ({product}) => {
             {description}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Stock: {stock}
+            STOCK: {stock}
           </Typography>
         </CardContent>
         <CardActions>
