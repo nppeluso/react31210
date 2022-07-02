@@ -16,5 +16,17 @@ export const getInfo = new Promise((resolve,reject) => {
         }else{
             reject("Promise REJECTED");
         }
-    },4000);
+    },3000);
+});
+
+export const getItem = new Promise((resolve,reject) => {
+    let flag = true;
+    setTimeout(()=>{
+        if (flag){
+            console.log("Promise resolved correctly!");
+            resolve(products.filter(item => item.name === 'Servicio 2'));
+        }else{
+            reject("Promise REJECTED");
+        }
+    },2000);
 });

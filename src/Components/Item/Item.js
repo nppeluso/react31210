@@ -10,7 +10,7 @@ const Item = ({product}) => {
     const {img, name, description, stock}=product;
   return (
     <div >
-      <Card sx={{ maxWidth: 345 }} className="catalogue">
+      <Card sx={{ maxWidth: 345, marginBottom: 4 }} className="catalogue">
         <CardMedia
           component="img"
           height="140"
