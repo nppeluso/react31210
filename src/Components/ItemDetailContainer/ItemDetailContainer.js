@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { getItem } from "../../mocks/fakeApi";
+import ItemDetail from '../ItemDetail/ItemDetail';
 
-const [item, setItemList]=useState([]);
-const [loading, setLoading] = useState(true);
+const ItemDetailContainer = ({ id }) => {
+    //const {id}=product;
+
+    const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(true);
 
 
-useEffect(()=>{
-    getItem.then((response) => setItemList(response))
-    .catch((error)=> console.log(error))
-    .finally(()=> setLoading(false))
-},[])
+    useEffect(() => {
+        getItem.then((response) => setProduct(response))
+            .catch((error) => console.log(error))
+            .finally(() => setLoading(false))
+    }, [])
 
-console.log("ITEM: " + JSON.stringify(item));
-
-const ItemDetailContainer = () => {
-  return (
-    <div>ItemDetailContainer</div>
-  )
+    console.log("Product: " + JSON.stringify(product));
+    return (
+        <>
+            {loading ? <p>Cargando...</p> : <ItemDetail product={product[0]} />}
+        </>
+    )
 }
 
 export default ItemDetailContainer

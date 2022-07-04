@@ -4,7 +4,7 @@ import icon from "../../assets/guarderia.jpg"
 import Typography from '@mui/material/Typography';
 
 import "./NavBar.css"
-import { Link, NavLinkde  } from "react-router-dom";
+//import { Link, NavLinkde  } from "react-router-dom";
 
 const NavBar = () => {
     return (

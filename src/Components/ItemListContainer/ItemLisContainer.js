@@ -15,22 +15,12 @@ const ItemListContainer = () => {
         .finally(()=> setLoading(false))
     },[])
 
-    /* Desafío Componentes II - Contador con Botón */ 
-    const stock = 30;
-    const onAdd = (carrito) => {
-        if (carrito <= stock){
-            alert("Pedido realizado! Cantidad encargada: " + carrito,2);
-        }else{
-            alert("Stock insuficiente! Debe seleccionar menos de: " + stock,2)
-        }
-    }
     return(
         <div>
-        <div className="landing">
-            {loading ? <p>Cargando...</p> : <ItemList productList={productList}/>}
-        </div>
-            <ItemCount stock={stock} initial='1' onAdd={onAdd}/>
-            </div> 
+            <div className="landing">
+                {loading ? <p>Cargando...</p> : <ItemList productList={productList}/>}
+            </div>
+        </div> 
     )
 }
 
