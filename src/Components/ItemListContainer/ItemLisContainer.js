@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ItemListContainer.css"
-import ItemCount from "./../ItemCount/ItemCount"
+import { SpinnerRoundFilled } from 'spinners-react';
 import ItemList from "../ItemList/ItemList";
 import { getInfo } from "../../mocks/fakeApi";
 
@@ -18,7 +18,7 @@ const ItemListContainer = () => {
     return(
         <div>
             <div className="landing">
-                {loading ? <p>Cargando...</p> : <ItemList productList={productList}/>}
+                {loading ? <SpinnerRoundFilled size="10%"/> : <ItemList productList={productList}/>}
             </div>
         </div> 
     )

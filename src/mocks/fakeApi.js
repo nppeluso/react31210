@@ -19,14 +19,16 @@ export const getInfo = new Promise((resolve,reject) => {
     },3000);
 });
 
-export const getItem = new Promise((resolve,reject) => {
+export const getItem = function(id){
+    return new Promise((resolve,reject) => {
     let flag = true;
     setTimeout(()=>{
         if (flag){
             console.log("Promise resolved correctly!");
-            resolve(products.filter(item => item.name === 'Servicio 2'));
+            resolve(products.find(item => item.id === id));
         }else{
             reject("Promise REJECTED");
         }
     },2000);
 });
+}

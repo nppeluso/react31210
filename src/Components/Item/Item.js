@@ -28,9 +28,7 @@ const Item = ({product}) => {
           <Typography variant="body2" color="text.secondary">
             STOCK: {stock}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            ItemDetailContainer: <ItemDetailContainer product={id}/>
-          </Typography>
+            <div>ItemDetailContainer: <ItemDetailContainer id={id}/></div>
         </CardContent>
         <CardActions>
           <Button size="small">Ver más</Button>

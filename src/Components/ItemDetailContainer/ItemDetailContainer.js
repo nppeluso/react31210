@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { getItem } from "../../mocks/fakeApi";
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { SpinnerInfinity } from 'spinners-react';
 
-const ItemDetailContainer = ({ id }) => {
-    //const {id}=product;
+const ItemDetailContainer = ({id}) => {
+    const productId = id;
 
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
-
     useEffect(() => {
-        getItem.then((response) => setProduct(response))
+        getItem(productId).then((response) => setProduct(response))
             .catch((error) => console.log(error))
             .finally(() => setLoading(false))
-    }, [])
+    }, [productId])
 
-    console.log("Product: " + JSON.stringify(product));
     return (
-        <>
-            {loading ? <p>Cargando...</p> : <ItemDetail product={product[0]} />}
-        </>
+        <div>
+            {loading ? <SpinnerInfinity thickness='200' secondaryColor='rgba(0,96,255,0.33)'/> : <ItemDetail product={product} />}
+        </div>
     )
 }
 
