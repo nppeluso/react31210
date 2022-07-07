@@ -5,7 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+//import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import { Link } from "react-router-dom";
 
 const Item = ({product}) => {
     const {id, img, name, description, stock}=product;
@@ -28,10 +29,10 @@ const Item = ({product}) => {
           <Typography variant="body2" color="text.secondary">
             STOCK: {stock}
           </Typography>
-            <div>ItemDetailContainer: <ItemDetailContainer id={id}/></div>
+            {/*<div>ItemDetailContainer: <ItemDetailContainer id={id}/></div>*/}
         </CardContent>
         <CardActions>
-          <Button size="small">Ver más</Button>
+          <Link to={`/product/${id}`}><Button variant="contained" size="small">Ver más</Button></Link>
         </CardActions>
       </Card>
     </div> 

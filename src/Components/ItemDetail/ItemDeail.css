@@ -1,0 +1,25 @@
+#details {
+    text-align: center;;
+    width: 50%;
+}
+
+img {
+    width: 20%;
+    padding: 20px;
+}
+
+#numbers { 
+    display: block;
+    border-radius: 10px;
+    border-style: groove;
+    text-align: center;
+    color: #1C4B1C;
+    margin-bottom: 10px;
+}
+
+#images {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-around;
+}

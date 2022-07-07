@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "./ItemListContainer.css"
 import { SpinnerRoundFilled } from 'spinners-react';
 import ItemList from "../ItemList/ItemList";
 import { getInfo } from "../../mocks/fakeApi";
-
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
+    const { categoryId } = useParams();
+    
     /* Desafío Promises & MAP - Catálogo con MAPS y Promises */
     const [productList,setProductList] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(()=>{
-        getInfo.then((response) => setProductList(response))
+        getInfo(categoryId).then((response) => setProductList(response))
         .catch((error)=> console.log(error))
         .finally(()=> setLoading(false))
-    },[])
+    },[categoryId])
 
     return(
         <div>
