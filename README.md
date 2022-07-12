@@ -34,4 +34,5 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - CSS
 - Material
 - Spinners-react
+- Manejo de eventos para Finalizar la compra
 

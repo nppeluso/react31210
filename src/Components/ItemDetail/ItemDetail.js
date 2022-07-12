@@ -1,19 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+import Container from '@mui/material/Container';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDeail.css';
-import Container from '@mui/material/Container';
 
 const ItemDetail = ({ product }) => {
   const { name, fullDescription, img, price, stock, thumbnail_1, thumbnail_2 } = product;
+  const [goToCart, setGoToCart] = useState(false);
+
   const onAdd = (carrito) => {
-    if (carrito === 0) {
-      alert("Por favor elija una cantidad mayor a 0 y menor al stock.");
-    } else if (carrito <= stock) {
-      alert("Pedido realizado! Cantidad encargada: " + carrito, 2);
-    }
-    else{
-      alert("Stock insuficiente! Debe seleccionar menos de: " + stock, 2)
-    }
+    setGoToCart(true);
+    
+    //NO LO UTILIZAMOS EN EL DESAFIO DE EVENTOS
+    //if (carrito === 0) {
+    //  alert("Por favor elija una cantidad mayor a 0 y menor al stock.");
+    //} else if (carrito <= stock) {
+    //  alert("Pedido realizado! Cantidad encargada: " + carrito, 2);
+    //}
+    //else{
+    //  alert("Stock insuficiente! Debe seleccionar menos de: " + stock, 2)
+    //}
   }
 
   return (
@@ -32,7 +38,9 @@ const ItemDetail = ({ product }) => {
           <h3>PRECIO {price}</h3>
           <h4>STOCK: {stock}</h4>
         </div>
-        <ItemCount stock={stock} initial='1' onAdd={onAdd} />
+        {
+          goToCart ? <Link to='../Cart'>Finalizar Compra</Link> : <ItemCount stock={stock} initial='1' onAdd={onAdd} />
+        }
 
       </Container>
 
