@@ -1,16 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import ItemCount from '../ItemCount/ItemCount';
+import { cartContext } from '../../Context/CartContext';
 import './ItemDeail.css';
 
 const ItemDetail = ({ product }) => {
   const { name, fullDescription, img, price, stock, thumbnail_1, thumbnail_2 } = product;
   const [goToCart, setGoToCart] = useState(false);
+  const { addItem } = useContext(cartContext);
 
   const onAdd = (carrito) => {
+    const producto = {...product, qty: carrito};
+    addItem(producto);
     setGoToCart(true);
-    
     //NO LO UTILIZAMOS EN EL DESAFIO DE EVENTOS
     //if (carrito === 0) {
     //  alert("Por favor elija una cantidad mayor a 0 y menor al stock.");

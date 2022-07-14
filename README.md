@@ -13,6 +13,7 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Opción de aumentar y disminuir la cantidad de productos a pedir, limitado por la cantidad de stock que haya
 - Cards de productos por categoría con imagen, cards de todos los productos con imagen, detalle de producto. Todo obtenido mediante promise que ejecuta find para buscar el producto por id o categoría o bien trae todos los productos. Todos los parametros pasados por props, useParams, etc..
 - Navegación de la aplicación con React Router Dom
+- Acumulación de productos en el carrito mediante el uso de Context
 
 ## Info visible
 - Lista de cards de todos los productos
@@ -20,6 +21,7 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Información detallada del producto seleccionado
 - Contador de items a solicitar
 - Una vez que se carga la info breve de cada producto se pasa a cargar la info detallada, la cuál se obtiene mediante una promise que ejecuta un "find" para buscar el producto por "id"
+- Cantidad de productos agregados al carrito
 
 ## Metodología aplicada
 
@@ -35,4 +37,5 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Material
 - Spinners-react
 - Manejo de eventos para Finalizar la compra
+- Manejo de Context para guardar el detalle del producto seleccionado y la cantidad elegida
 
