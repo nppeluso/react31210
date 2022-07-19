@@ -1,0 +1,21 @@
+.cartDetail {
+    display: flex;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.cartDetail>img{
+    width: 60px;
+}
+
+h2{
+    margin: 10px;
+}
+
+h3{
+    color: green;
+    margin: 10px;
+}
+

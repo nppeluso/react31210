@@ -7,7 +7,7 @@ const CartWidget = () => {
     return(
         <>
             <ShoppingCartOutlinedIcon color="success" fontSize="large" />
-            <p>{qtyProducts}</p>
+            {qtyProducts > 0 ? <h2> {qtyProducts} </h2> : ''}
         </>
     )
 }

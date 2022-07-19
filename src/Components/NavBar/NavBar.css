@@ -30,7 +30,16 @@ a img{
     padding: 10px;
 }
 
-.nav-cart {
+.cart {
+    width: 100px;
+}
+
+.cart>a{
     display: flex;
-    align-items: center;
-  }
+    text-decoration: none;
+}
+
+.cart>a>h2{
+    margin: 5px;
+    color: #2e7d32;
+}
