@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import ItemCount from '../ItemCount/ItemCount';
 import { cartContext } from '../../Context/CartContext';
+import Button from '@mui/material/Button';
 import './ItemDeail.css';
 
 const ItemDetail = ({ product }) => {
@@ -42,7 +43,7 @@ const ItemDetail = ({ product }) => {
           <h4>STOCK: {stock}</h4>
         </div>
         {
-          goToCart ? <Link to='/cart'>Finalizar Compra</Link> : <ItemCount stock={stock} initial='1' onAdd={onAdd} />
+          goToCart ? <Button variant="contained" size="small"><Link to='/cart'>Finalizar Compra</Link></Button> : <ItemCount stock={stock} initial='1' onAdd={onAdd} />
         }
 
       </Container>

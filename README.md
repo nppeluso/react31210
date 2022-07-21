@@ -45,3 +45,4 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Manejo de Context para mostrar el detalle del carrito, el precio total de la compra y la opción de poder eliminar algun producto de la compra
 - Conditional Rendering para mostrar un número de items en caso que la cantidad de productos elegidos sea mayor a 0 o bien en el detalle del carrito para mostrar un link al landing page cuando no hay productos.
 - Firebase para el guardado y manejo de datos
+- Sweet alert

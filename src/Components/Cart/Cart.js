@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { cartContext } from '../../Context/CartContext';
 import './Cart.css';
 import Button from '@mui/material/Button';
+import Swal from 'sweetalert2';
 
 
 const Cart = () => {
@@ -23,7 +24,27 @@ const Cart = () => {
                                     <h2>Producto: {prod.name}</h2>
                                     <h2>Precio: ${prod.price}</h2>
                                     <h2>Cantidad {prod.qty}</h2>
-                                    <Button variant="contained" size="small" onClick={() => removeItem(prod.id)}>Remover</Button>
+                                    <Button variant="contained" size="small" onClick={ () =>
+                                        Swal.fire({
+                                            title: '¿Seguro que quieres eliminar este productos del Carrito?',
+                                            text: "Una vez eliminado no podrás revertirlo",
+                                            icon: 'warning',
+                                            showCancelButton: true,
+                                            confirmButtonColor: '#3085d6',
+                                            cancelButtonColor: '#d33',
+                                            confirmButtonText: 'Si, eliminar producto'
+                                          }).then((result) => {
+                                            if (result.isConfirmed) {
+                                              Swal.fire(
+                                                'Borrado',
+                                                'El carrito fue eliminado',
+                                                'Correcto!'
+                                              )
+                                              .then(() => removeItem(prod.id)
+                                              )
+                                            }
+                                          })
+                                        }>Remover</Button>
                                 </div>
                             ))}
                             <h3> Total: ${calculateTotal()}</h3>
