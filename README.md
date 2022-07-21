@@ -15,6 +15,7 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Navegación de la aplicación con React Router Dom
 - Acumulación de productos en el carrito mediante el uso de Context
 - Detalle del carrito de compra y valor total de ésta. Con la opción de eliminar productos.
+- Uso de Firebase para el guardado de productos y la obtención de ellos
 
 ## Info visible
 - Lista de cards de todos los productos
@@ -24,6 +25,7 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Una vez que se carga la info breve de cada producto se pasa a cargar la info detallada, la cuál se obtiene mediante una promise que ejecuta un "find" para buscar el producto por "id"
 - Cantidad de productos agregados al carrito, si el carrito no contiene productos no se muestra ningún número
 - Detalle del carrito por producto, con la opción de eliminarlo, y el precio final de la compra. En caso de que el carrito no tenga productos se muestra una leyenda con un link a la landing page.
+- Toda la info de los productos y sus respectivos detalles provienen de Firebase
 
 ## Metodología aplicada
 
@@ -42,3 +44,4 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Manejo de Context para guardar el detalle del producto seleccionado y la cantidad elegida
 - Manejo de Context para mostrar el detalle del carrito, el precio total de la compra y la opción de poder eliminar algun producto de la compra
 - Conditional Rendering para mostrar un número de items en caso que la cantidad de productos elegidos sea mayor a 0 o bien en el detalle del carrito para mostrar un link al landing page cuando no hay productos.
+- Firebase para el guardado y manejo de datos

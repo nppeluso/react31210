@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { getItem } from "../../mocks/fakeApi";
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { SpinnerInfinity } from 'spinners-react';
 import { useParams } from "react-router-dom";
+import { db } from "../../firebase/firebase";
+import { doc, getDoc, collection } from "firebase/firestore";
 
 const ItemDetailContainer = ({id}) => {
     const { productIdLink } = useParams();
@@ -10,10 +11,22 @@ const ItemDetailContainer = ({id}) => {
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    //useEffect(() => {
+    //    const productsCollection = collection(db, 'products');
+    //    const refDoc = doc(productsCollection, productIdLink);
+    //},[])
+
     useEffect(() => {
-        getItem(productIdLink).then((response) => setProduct(response))
-            .catch((error) => console.log(error))
-            .finally(() => setLoading(false))
+        const productsCollection = collection(db, 'products');
+        const refDoc = doc(productsCollection, productIdLink);
+        getDoc(refDoc).then(result => {
+            setProduct({
+                id:  result.id,
+                ...result.data()
+            })
+        })
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false))
     }, [productIdLink])
 
     return (
