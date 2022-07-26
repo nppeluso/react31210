@@ -16,6 +16,7 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Acumulación de productos en el carrito mediante el uso de Context
 - Detalle del carrito de compra y valor total de ésta. Con la opción de eliminar productos.
 - Uso de Firebase para el guardado de productos y la obtención de ellos
+- Uso de Firebase y form para ingresar cada pedido, con datos de los productos y del usuario que lo solicita
 
 ## Info visible
 - Lista de cards de todos los productos
@@ -26,6 +27,7 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Cantidad de productos agregados al carrito, si el carrito no contiene productos no se muestra ningún número
 - Detalle del carrito por producto, con la opción de eliminarlo, y el precio final de la compra. En caso de que el carrito no tenga productos se muestra una leyenda con un link a la landing page.
 - Toda la info de los productos y sus respectivos detalles provienen de Firebase
+- Concretar el armado del pedido ingresando los datos del Usuario mediante un form
 
 ## Metodología aplicada
 
