@@ -7,7 +7,6 @@ import { doc, getDoc, collection } from "firebase/firestore";
 
 const ItemDetailContainer = ({id}) => {
     const { productIdLink } = useParams();
-    console.log(productIdLink)
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 

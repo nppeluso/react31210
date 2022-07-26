@@ -4,10 +4,23 @@ import { cartContext } from '../../Context/CartContext';
 import './Cart.css';
 import Button from '@mui/material/Button';
 import Swal from 'sweetalert2';
-
+import FormSales from './FormSales';
+import { db } from "../../firebase/firebase";
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Cart = () => {
     const { products, removeItem, calculateTotal } = useContext(cartContext);
+    const finalizarCompra = (userDetails) => {
+        const ventasCollection = collection(db, 'ventas');
+        addDoc(ventasCollection, {
+            comprador: userDetails,
+            items: products.map(product => ({ id: product.id, name: product.name, Precio: product.price, Cantidad: product.qty })),
+            date: serverTimestamp(),
+            total: calculateTotal(),
+        })
+        .then(({ id }) => Swal.fire('Gracias por su compra! Su ID de compra es: ' + id))
+    }
+
     return (
         <div>
             <div>
@@ -48,6 +61,7 @@ const Cart = () => {
                                 </div>
                             ))}
                             <h3> Total: ${calculateTotal()}</h3>
+                            <FormSales finalizarCompra={finalizarCompra}/>
                         </>
                 }
             </div>
