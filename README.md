@@ -6,7 +6,7 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 
 ## Alcance al momento
 
-- NavBar realizado con links mediante un Componente NavBar y componente CartWidget con ícono del carro de compras
+- NavBar realizado con links mediante un Componente NavBar y componente CartWidget con ícono del carro de compras. El navBar es dinámico ya que obtiene cada category desde un collection en el firebase.
 - Componente contenedor ItemListContainer que contiene leyenda que luego será reemplazado con el catálogo
 - Utilización de Props 
 - Estilos con CSS3 y Material
@@ -48,3 +48,21 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Conditional Rendering para mostrar un número de items en caso que la cantidad de productos elegidos sea mayor a 0 o bien en el detalle del carrito para mostrar un link al landing page cuando no hay productos.
 - Firebase para el guardado y manejo de datos
 - Sweet alert
+- React-hook-form
+
+## Cosas pendientes:
+
+- Mandatorio: Hacer responsive la pagina
+- Mandatorio: FORM --> Agregar que se reingrese el email
+- Mandatorio: FORM --> Mejorar las validaciones de datos
+- Mandatorio: Si se ingresa a /item/:id y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.
+- Mandatorio: categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} para que quede /categories/calzado en lugar de /categories/ad43k348j
+- Mandatorio: Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
+
+## Nice To Have:
+
+- Auth/login
+- Wishlist
+- Custom item
+- Stock check
+- Cart persistente:

@@ -26,7 +26,7 @@ const Cart = () => {
             <div>
                 {
                     products.length === 0 ?
-                        <h2>El carrito esta vacío. Haz click <Link to='/'>aquí</Link> para volver al landing page</h2>
+                        <h2>El carrito esta vacío. Haga click <Link to='/'>aquí</Link> para volver al landing page</h2>
 
                         :
                         <>{
