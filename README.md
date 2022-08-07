@@ -48,16 +48,17 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Conditional Rendering para mostrar un número de items en caso que la cantidad de productos elegidos sea mayor a 0 o bien en el detalle del carrito para mostrar un link al landing page cuando no hay productos.
 - Firebase para el guardado y manejo de datos
 - Sweet alert
-- React-hook-form
+- React-hook-form:
+    * Utilizo register para tomar los datos
+    * Utilizo handleSubmit para llamar a la función recibida como props para el ingreso de los datos al pedido de compra
+    * Utilizo formState: { errors } para tratar las validaciones de los datos ingresados
+    * Utilizo watch para poder validar el email reingresado con el original leyendo el campo ingresado 
 
 ## Cosas pendientes:
 
-- Mandatorio: Hacer responsive la pagina
-- Mandatorio: FORM --> Agregar que se reingrese el email
-- Mandatorio: FORM --> Mejorar las validaciones de datos
-- Mandatorio: Si se ingresa a /item/:id y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.
-- Mandatorio: categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} para que quede /categories/calzado en lugar de /categories/ad43k348j
-- Mandatorio: Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
+- Hacer responsive la pagina
+- categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} para que quede /categories/calzado en lugar de /categories/ad43k348j
+- Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
 
 ## Nice To Have:
 
