@@ -47,7 +47,7 @@ const FormSales = ({ finalizarCompra }) => {
                                 <TextField label="Dirección" placeholder="Ingrese su Dirección" variant="outlined" fullWidth required {...register('address')}></TextField>
                             </Grid>
                             <Grid xs={12} item>
-                                <Button type="submit" variant="contained" color="primary" fullWidth>Concretar Pedido</Button>
+                                <Button type="submit" variant="contained" color="primary" fullWidth>Finalizar Pedido</Button>
                             </Grid>
                         </Grid>
                     </form>

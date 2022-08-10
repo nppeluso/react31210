@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { cartContext } from '../../Context/CartContext';
 import './Cart.css';
@@ -10,6 +10,8 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Cart = () => {
     const { products, removeItem, calculateTotal } = useContext(cartContext);
+    const [goToForm, setGoToForm] = useState(false);
+
     const finalizarCompra = (userDetails) => {
         const ventasCollection = collection(db, 'ventas');
         addDoc(ventasCollection, {
@@ -61,7 +63,8 @@ const Cart = () => {
                                 </div>
                             ))}
                             <h3> Total: ${calculateTotal()}</h3>
-                            <FormSales finalizarCompra={finalizarCompra}/>
+                            <Button variant="contained" size="small" onClick={ () => { setGoToForm(true) }}>Cargar pedido</Button>
+                            {goToForm ? <FormSales finalizarCompra={finalizarCompra}/> : ''}
                         </>
                 }
             </div>
