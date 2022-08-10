@@ -53,16 +53,3 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
     * HandleSubmit: Utilizado para llamar a la función recibida como props para el ingreso de los datos al pedido de compra
     * FormState: { errors }: Utilizado para tratar las validaciones de los datos ingresados
     * Watch: Utilizado para poder validar el email reingresado con el original leyendo el campo ingresado 
-
-## Cosas pendientes:
-
-- categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} para que quede /categories/calzado en lugar de /categories/ad43k348j
-- Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
-
-## Nice To Have:
-
-- Auth/login
-- Wishlist
-- Custom item
-- Stock check
-- Cart persistente:
