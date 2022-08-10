@@ -3,10 +3,6 @@ h2{
     color: green;
 }
 
-.gallery{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 1105px;
+a{
+    text-decoration: none;
 }

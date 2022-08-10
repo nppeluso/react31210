@@ -30,33 +30,32 @@ Tienda virtual donde se podrá encontrar productos y/o servicios, ver los detall
 - Concretar el armado del pedido ingresando los datos del Usuario mediante un form
 
 ## Metodología aplicada
-
 - Componentes React 
-- React Router Dom
 - Props 
 - UseState
 - UseEffect
 - UseParams
-- Manual Promise
 - JS
 - CSS
-- Material
-- Spinners-react
 - Manejo de eventos para Finalizar la compra
 - Manejo de Context para guardar el detalle del producto seleccionado y la cantidad elegida
 - Manejo de Context para mostrar el detalle del carrito, el precio total de la compra y la opción de poder eliminar algun producto de la compra
 - Conditional Rendering para mostrar un número de items en caso que la cantidad de productos elegidos sea mayor a 0 o bien en el detalle del carrito para mostrar un link al landing page cuando no hay productos.
-- Firebase para el guardado y manejo de datos
-- Sweet alert
-- React-hook-form:
-    * Utilizo register para tomar los datos
-    * Utilizo handleSubmit para llamar a la función recibida como props para el ingreso de los datos al pedido de compra
-    * Utilizo formState: { errors } para tratar las validaciones de los datos ingresados
-    * Utilizo watch para poder validar el email reingresado con el original leyendo el campo ingresado 
+
+## Librerías Públicas extras
+- React Router Dom - https://v5.reactrouter.com/ - Utilizado para routing y navegación
+- Spinners-react - https://www.npmjs.com/package/spinners-react - Utilizado para indicar al usuario que se está cargando el contenido/datos
+- Material - https://mui.com/ - Utilizado para que el ecommerce tenga elementos con mejor estilo
+- Firebase - https://firebase.google.com/ - Utilizado para el manejo de datos
+- Sweet alert - https://sweetalert2.github.io/ - Utilizado para comunicar mensajes al usuario con un estilo mejorado.
+- React-hook-form - https://react-hook-form.com/:
+    * Register: Utilizado para tomar los datos
+    * HandleSubmit: Utilizado para llamar a la función recibida como props para el ingreso de los datos al pedido de compra
+    * FormState: { errors }: Utilizado para tratar las validaciones de los datos ingresados
+    * Watch: Utilizado para poder validar el email reingresado con el original leyendo el campo ingresado 
 
 ## Cosas pendientes:
 
-- Hacer responsive la pagina
 - categories/:id debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} para que quede /categories/calzado en lugar de /categories/ad43k348j
 - Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
 

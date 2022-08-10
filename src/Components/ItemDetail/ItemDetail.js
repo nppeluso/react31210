@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import ItemCount from '../ItemCount/ItemCount';
 import { cartContext } from '../../Context/CartContext';
 import Button from '@mui/material/Button';
+import Swal from 'sweetalert2';
 import './ItemDeail.css';
 
 const ItemDetail = ({ product }) => {
@@ -13,17 +14,25 @@ const ItemDetail = ({ product }) => {
 
   const onAdd = (carrito) => {
     const producto = { ...product, qty: carrito };
-    addItem(producto);
-    setGoToCart(true);
-    //NO LO UTILIZAMOS EN EL DESAFIO DE EVENTOS
-    //if (carrito === 0) {
-    //  alert("Por favor elija una cantidad mayor a 0 y menor al stock.");
-    //} else if (carrito <= stock) {
-    //  alert("Pedido realizado! Cantidad encargada: " + carrito, 2);
-    //}
-    //else{
-    //  alert("Stock insuficiente! Debe seleccionar menos de: " + stock, 2)
-    //}
+    if (carrito === 0) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Por favor elija una cantidad mayor a 0 y menor al stock.',
+        footer: ""
+      });
+    } else if (carrito <= stock) {
+      addItem(producto);
+      setGoToCart(true);
+    }
+    else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Stock insuficiente! Debe seleccionar menos de: ' + stock,
+        footer: ""
+      });
+    }
   }
 
   return (

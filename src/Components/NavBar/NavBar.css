@@ -3,7 +3,7 @@ nav a.link:hover {
     transition: 0.5s;
 }
 
-h1 {
+.navBar h1 {
     color: rgb(37, 175, 91);
     float: left;
     padding: 1% 0px 1%;
@@ -68,10 +68,18 @@ a img {
     border-radius: 4px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1100px) {
     nav a {
         float: none;
         display: block;
         text-align: left;
+    }
+
+    .menuElements {
+        float: none;
+    }
+
+    .navBar h1{
+        float: none;
     }
 }

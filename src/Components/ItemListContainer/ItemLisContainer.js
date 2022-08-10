@@ -27,11 +27,11 @@ const ItemListContainer = () => {
     }, [categoryId])
 
     return (
-        <div>
+
             <div className="landing">
                 {loading ? <SpinnerRoundFilled size="10%" /> : <ItemList productList={productList} />}
             </div>
-        </div>
+
     )
 }
 
