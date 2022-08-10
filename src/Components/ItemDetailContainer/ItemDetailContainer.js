@@ -9,11 +9,6 @@ const ItemDetailContainer = ({ id }) => {
     const { productIdLink } = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
-    //useEffect(() => {
-    //    const productsCollection = collection(db, 'products');
-    //    const refDoc = doc(productsCollection, productIdLink);
-    //},[])
-
 
     useEffect(() => {
         const productsCollection = collection(db, 'products');

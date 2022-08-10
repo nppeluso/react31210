@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CartWidget from "../CartWidget/CartWidget";
-import icon from "../../assets/guarderia.png"
-import Typography from '@mui/material/Typography';
+import icon from "../../assets/guarderia.png";
 import "./NavBar.css"
 import { Link, NavLink } from "react-router-dom";
 import { db } from "../../firebase/firebase";
