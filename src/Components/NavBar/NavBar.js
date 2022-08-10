@@ -7,13 +7,6 @@ import { Link, NavLink } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { collection, getDocs } from 'firebase/firestore';
 
-/*const categories = [
-    { name: "Guarderia", id: 0, route: "/category/Guarderia" },
-    { name: "Adiestramiento", id: 3, route: "/category/Adiestramiento" },
-    { name: "Juguetes", id: 1, route: "/category/Juguetes" },
-    { name: "Accesorios", id: 2, route: "/category/Accesorios" }
-]*/
-
 const NavBar = () => {
     const [categories, setCategories] = useState([]);
 
@@ -33,16 +26,17 @@ const NavBar = () => {
 
     return (
         <div className="navBar">
-            <Link to="/"><img src={icon} alt=""></img></Link>
-            <Typography gutterBottom variant="h7" component="div">
+            <Link to="/"><img src={icon} alt="" className="logo"></img></Link>
+            
                 <h1>Guardería BetyVero</h1>
-            </Typography>
-            <nav>
-                {categories.map((category) => <NavLink key={category.id} to={category.route}>{category.name}</NavLink>)}
+
+            <nav className='menuElements'>
+                {categories.map((category) => <NavLink class="link" key={category.id} to={category.route}>{category.name}</NavLink>)}
+                <div className="cart">
+                    <Link to="/Cart"><CartWidget /></Link>
+                </div>
             </nav>
-            <div className="cart">
-                <Link to="/Cart"><CartWidget /></Link>
-            </div>
+            
         </div>
     )
 }
