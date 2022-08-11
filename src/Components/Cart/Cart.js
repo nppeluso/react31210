@@ -53,7 +53,7 @@ const Cart = () => {
                                               Swal.fire(
                                                 'Borrado',
                                                 'El carrito fue eliminado',
-                                                'Correcto!'
+                                                'success'
                                               )
                                               .then(() => removeItem(prod.id)
                                               )
